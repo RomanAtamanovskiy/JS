@@ -1,9 +1,10 @@
+
 <meta charset="utf-8">
 <script>
 // Задание 1. Выполнено ранее
 
 // Задание 2.
-	var i = "", u;
+/*	var i = "", u;
 	for (u = 1; u < 7; u++){
 		console.log (i += "#");
 	}
@@ -19,5 +20,22 @@
 			x += "# # # # \n" ;
 		}
 
+	console.log(x);*/
+
+// Задание 3. Усложнённое
+	var goriz = +prompt  ("Введите количество символов по горизонтали:");
+	var vert = +prompt  ("Введите количество символов по вертикали:");	
+	var x = "", y, cells = goriz * vert + vert;
+	for (y=1; y<=cells; y++){			
+		if (y % (goriz + 1) == 0)
+			x += "\n" ;
+		else if (y % 2 == 0)
+			x += "#" ;
+		else
+			x += " ";
+		}
+
 	console.log(x);
+
 </script>
+
