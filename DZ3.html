@@ -26,15 +26,31 @@
 	var goriz = +prompt  ("Введите количество символов по горизонтали:");
 	var vert = +prompt  ("Введите количество символов по вертикали:");	
 	var x = "", y, cells = goriz * vert + vert;
-	for (y=1; y<=cells; y++){			
-		if (y % (goriz + 1) == 0)
-			x += "\n" ;
-		else if (y % 2 == 0)
-			x += "#" ;
-		else
-			x += " ";
-		}
-
+	if (goriz % 2 == 0)	{
+		for (y=1; y<=cells; y++){			
+			if (y % (goriz + 1) == 0)
+				x += "\n" ;
+			else if (y % 2 == 0)
+				x += "#" ;
+			else
+				x += " ";
+			}
+	}
+	else
+		for (y=1; y<=cells; y++){			
+			if (y % (goriz) == 0){
+				if (y % 2 == 0)
+					x += "#\n";
+				else
+					x += " \n";
+				}
+			else if (y % 2 == 0)
+				x += "#" ;
+			else
+				x += " ";
+			}
+		
+		
 	console.log(x);
 
 </script>
