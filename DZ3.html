@@ -25,33 +25,34 @@
 // Задание 3. Усложнённое
 	var goriz = +prompt  ("Введите количество символов по горизонтали:");
 	var vert = +prompt  ("Введите количество символов по вертикали:");	
-	var x = "", y, cells = goriz * vert + vert;
-	if (goriz % 2 == 0)	{
-		for (y=1; y<=cells; y++){			
-			if (y % (goriz + 1) == 0)
-				x += "\n" ;
-			else if (y % 2 == 0)
-				x += "#" ;
+	var table = "", x, y;
+	function string1 () {
+		for (x = 1; x <= goriz; x++)
+			if (x % 2 == 0)
+				table += "#" ;
 			else
-				x += " ";
-			}
+				table += " "; 
+			table += "\n";
 	}
-	else
-		for (y=1; y<=cells; y++){			
-			if (y % (goriz) == 0){
-				if (y % 2 == 0)
-					x += "#\n";
-				else
-					x += " \n";
-				}
-			else if (y % 2 == 0)
-				x += "#" ;
+	function string2 () {
+		for (x = 1; x <= goriz; x++)
+			if (x % 2 == 0)
+				table += " " ;
 			else
-				x += " ";
-			}
+				table += "#"; 
+			table += "\n";
+	}
+	for (y=1; y<=vert; y++){
+		if (y % 2 == 0){
+			string1 ();
+		}
+		else
+			string2 ();
 		
-		
-	console.log(x);
+	}	
+	console.log(table);
+
+	
 
 </script>
 
